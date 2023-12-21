@@ -1,0 +1,30 @@
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 200ms 0 10000n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC 
+
+
+
+** INCLUDING SCHEMATIC1.net **
+* source MONTAJE01_P3
+D_D1         N00282 N00270 D1N4004 
+D_D2         V- 0 D1N4004 
+D_D3         V- N00282 D1N4004 
+D_D4         0 N00270 D1N4004 
+L_L1         0 N00239  235H  
+L_L2         0 N00282  800mH  
+R_R1         V- N00270  100 TC=0,0 
+V_V1         N00233 0  AC 0
++SIN 0 169.2 60 0 0 0
+Kn_K1         L_L1 L_L2     1
+R_R2         N00233 N00239  1 TC=0,0 
+
+** RESUMING sim.cir **
+.END
