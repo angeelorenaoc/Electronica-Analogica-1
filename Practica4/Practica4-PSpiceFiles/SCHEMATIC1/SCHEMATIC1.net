@@ -1,0 +1,10 @@
+* source PRACTICA4
+V_V1         N14465 0  AC 0
++SIN 0 169.2 60 0 0 0
+L_L1         0 N14472  2040mH  
+L_L2         0 N14501  5.1mH  
+C_C1         0 N14508  2200u  TC=0,0 
+R_R1         N14465 N14472  1 TC=0,0 
+R_Rl         0 N14508  100 TC=0,0 
+D_D1         N14501 N14508 D1N4004 
+Kn_K1         L_L1 L_L2     1
