@@ -1,0 +1,13 @@
+* source ANÁLISIS EN AC
+R_Rin         VIN N14700  1k TC=0,0 
+R_rg         N14608 N14689  1k TC=0,0 
+R_rd         N14547 N14543  20k TC=0,0 
+R_rs         0 N14831  1k TC=0,0 
+R_rl         0 VOUT  100k TC=0,0 
+X_U1         N14547 N14608 N14831 2N7000
+C_C1         N14700 N14608  22u  TC=0,0 
+C_C2         N14547 VOUT  22u  TC=0,0 
+V_V1         VIN 0  AC 0
++SIN 0 0.1 5k 0 0 0
+V_V2         N14689 0 2.51v
+V_V3         N14543 0 10v

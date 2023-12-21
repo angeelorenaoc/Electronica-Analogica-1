@@ -1,0 +1,9 @@
+The conversion of the project was successful.
+
+The new directory structure is as follows:
+
+U:/EA1/Practica9/1
+    Analisis en AC.opj
+    análisis en ac.dsn
+U:/EA1/Practica9/1/Analisis en AC-PSpiceFiles
+U:/EA1/Practica9/1/Analisis en AC-PSpiceFiles/SCHEMATIC1

@@ -1,0 +1,13 @@
+* source ANALISISAC
+R_Rin         VIN N15567  1k TC=0,0 
+V_V2         N15413 0 2.51v
+C_C1         N15567 N15505  22u  TC=0,0 
+R_rl         0 VOUT  100k TC=0,0 
+R_rd         N15449 N15409  20k TC=0,0 
+V_V1         VIN 0  AC 0
++SIN 0 0.1 100k 0 0 0
+R_rg         N15505 N15413  1k TC=0,0 
+X_U1         N15449 N15505 N15583 2N7000
+C_C2         N15449 VOUT  22u  TC=0,0 
+V_V3         N15409 0 10v
+R_rs         0 N15583  1k TC=0,0 

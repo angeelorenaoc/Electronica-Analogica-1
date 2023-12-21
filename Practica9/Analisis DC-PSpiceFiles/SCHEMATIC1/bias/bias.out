@@ -1,0 +1,102 @@
+
+**** 12/05/23 05:29:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisis dc-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\user\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1ms 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ANALISIS DC
+V_V1         N15030 0 10Vdc
+R_R1         N15080 N15030  1k TC=0,0 
+V_V2         N15116 VI 1.845
+V_V3         VI 0  AC 0
++SIN 0 0.1 1k 0 0 0
+X_Q1         N15080 N15116 0 awb2n7000 PARAMS:                                 
++      BYPASS_L=1 MTYPE=1
+
+**** RESUMING bias.cir ****
+.END
+
+
+WARNING(ORPSIM-15256): <X_Q1.xinst2n7000.md2> not a subcircuit param
+
+WARNING(ORPSIM-15256): <X_Q1.xinst2n7000.vjd2> not a subcircuit param
+
+WARNING(ORPSIM-15256): <X_Q1.xinst2n7000.cjod2> not a subcircuit param
+
+**** 12/05/23 05:29:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisis dc-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VI)    0.0000  (N15030)   10.0000 (N15080)     .0140 (N15116)    1.8450     
+
+(X_Q1.xinst2n7000.4)     .0140        (X_Q1.xinst2n7000.5)    1.8450            
+
+(X_Q1.xinst2n7000.6)     .0064        
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -9.986E-03
+    V_V2        -1.845E-09
+    V_V3        -1.845E-09
+
+    TOTAL POWER DISSIPATION   9.99E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/05/23 05:29:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisis dc-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

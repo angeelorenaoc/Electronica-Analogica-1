@@ -1,0 +1,178 @@
+
+**** 12/03/23 11:19:43 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisisac-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\user\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ANALISISAC
+R_Rin         VIN N15567  1k TC=0,0 
+V_V2         N15413 0 2.51v
+C_C1         N15567 N15505  22u  TC=0,0 
+R_rl         0 VOUT  100k TC=0,0 
+R_rd         N15449 N15409  20k TC=0,0 
+V_V1         VIN 0  AC 0
++SIN 0 0.1 5k 0 0 0
+R_rg         N15505 N15413  1k TC=0,0 
+X_U1         N15449 N15505 N15583 2N7000
+C_C2         N15449 VOUT  22u  TC=0,0 
+V_V3         N15409 0 10v
+R_rs         0 N15583  1k TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 12/03/23 11:19:43 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisisac-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DBD        
+          IS   48.116150E-15 
+          BV   75            
+         IBV   10.000000E-06 
+          RS    1.000000E-06 
+          TT   30.000000E-09 
+         CJO   16.940000E-12 
+          VJ     .5          
+           M     .2          
+
+
+**** 12/03/23 11:19:43 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisisac-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.MINT       
+               NMOS            
+       LEVEL    3            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    2.148821     
+          KP     .5106       
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS    1.000000E-24 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+       UCRIT   10.000000E+03 
+        VMAX    1.000000E+03 
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0  600            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 12/03/23 11:19:43 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisisac-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VIN)    0.0000  ( VOUT)    0.0000  (N15409)   10.0000 (N15413)    2.5100     
+
+(N15449)    3.4979 (N15505)    2.5100 (N15567)    0.0000 (N15583)     .3251     
+
+(X_U1.1)    2.5100 (X_U1.2)    2.5100 (X_U1.3)    3.4974 (X_U1.4)    3.4979     
+
+(X_U1.5)    3.4979 (X_U1.6)     .3251 (X_U1.7)     .3251 (X_U1.8)     .3251     
+
+(X_U1.9)    3.4979 (X_U1.11)    0.0000                   (X_U1.12)     .9874    
+
+(X_U1.13)   15.0630                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.456E-09
+    V_V1         0.000E+00
+    V_V3        -3.251E-04
+    X_U1.V11     0.000E+00
+
+    TOTAL POWER DISSIPATION   3.25E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/03/23 11:19:43 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica9\analisisac-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

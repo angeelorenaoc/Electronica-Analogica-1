@@ -1,0 +1,8 @@
+* source ANALISIS DC
+V_V1         N15030 0 10Vdc
+R_R1         N15080 N15030  1k TC=0,0 
+V_V2         N15116 VI 1.845
+V_V3         VI 0  AC 0
++SIN 0 0.1 1k 0 0 0
+X_Q1         N15080 N15116 0 awb2n7000 PARAMS:                                 
++      BYPASS_L=1 MTYPE=1
