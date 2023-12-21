@@ -1,0 +1,205 @@
+
+**** 11/02/23 21:04:18 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ****************************
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+*** CIRCUIT DESCRIPTION: Regulated Voltage Supply based on the LM317 ***
+****************************
+
+*******************
+**** LM317's Spice Subcircuit Model *****
+*******************
+.SUBCKT LM317 1 2 3
+* Pin Connection: IN OUT ADJ
+IADJ 1 4 50U
+VREF 4 3 1.25
+RC 1 14 0.742
+DBK 14 13 D1
+CBC 13 15 2.479N
+RBC 15 5 247
+QP 13 5 2 Q1
+RB2 6 5 124
+DSC 6 11 D1
+ESC 11 2 POLY(2) (13,5) (6,5) 2.85
++ 0 0 0 -70.1M
+DFB 6 12 D1
+EFB 12 2 POLY(2) (13,5) (6,5) 3.92
++ -135M 0 1.21M -70.1M
+RB1 7 6 1
+EB 7 2 8 2 2.56
+CPZ 10 2 0.796U
+DPU 10 2 D1
+RZ 8 10 0.104
+RP 9 8 100
+EP 9 2 4 2 103.6
+RI 2 4 100MEG
+.MODEL Q1 NPN (IS=30F BF=100
++ VAF=14.27 NF=1.604)
+.MODEL D1 D (IS=30F N=1.604)
+.ENDS LM317
+*******************
+*** End of LM317's Spice Subcircuit Model *****
+*******************
+
+
+***************************
+*** Regulated Voltage Supply based on the LM317's Subcircuit Model ****
+***************************
+** This defines a sinusoid of 120Vrms amplitude and 60 Hz:
+VIN 2 0 SIN(0 169.7 60 0 0)
+** This defines a transformer:
+RS 2 1 1
+L1 1 0 2040mH
+L2 3 0 14.2mH
+L3 0 4 14.2mH
+K L1 L2 L3 1
+** This defines a Diode Rectification:
+D1 4 5 DI1N4004
+D2 3 5 DI1N4004
+** This defines the capacitance of the "RC circuit":
+CF 5 0 1000uF
+** Connecting the subckt of the voltage regulator LM317 configured
+** to provide ~10VDC in the output:
+XU1 5 6 7 LM317
+R2 6 7 1k
+R1 7 0 6.8k
+** Capacitor to the voltage regulator's input
+C1 5 0 0.1uF
+** Capacitor to the voltage regulator's output
+C2 6 0 1uF
+** Load resistence (RL) for the whole circuit.
+RL 6 0 510
+** Diode model
+.MODEL DI1N4004 D (IS=76.9n RS=42.0m BV=400 IBV=5.00u CJO=39.8p M=0.333 N=1.45 TT=4.32u)
+
+** Time Analysis
+.tran 1ms 200ms 0 1ms
+** Traces for the voltage at the LM317's input (node 5) and LM317's output (node 7).
+.probe V(5) V(6)
+.end
+
+**** 11/02/23 21:04:18 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ****************************
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DI1N4004        XU1.D1          
+          IS   76.900000E-09   30.000000E-15 
+           N    1.45            1.604        
+          BV  400                            
+         IBV    5.000000E-06                 
+          RS     .042                        
+          TT    4.320000E-06                 
+         CJO   39.800000E-12                 
+           M     .333                        
+
+
+**** 11/02/23 21:04:18 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ****************************
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               XU1.Q1          
+               NPN             
+       LEVEL    1            
+          IS   30.000000E-15 
+          BF  100            
+          NF    1.604        
+         VAF   14.27         
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 11/02/23 21:04:18 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ****************************
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  (    3)    0.0000  (    4)    0.0000      
+
+(    5)    -.2170  (    6)     .0209  (    7)     .0618  (XU1.4)    1.3118      
+
+(XU1.5)    1.1798  (XU1.6)    3.6895  (XU1.7)    3.7098  (XU1.8)    1.4618      
+
+(XU1.9)  133.7600  (XU1.10)    1.3243 (XU1.11)    2.9947 (XU1.12)    4.1603     
+
+(XU1.13)     .4759 (XU1.14)    -.2170 (XU1.15)    1.1798 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    VIN          0.000E+00
+    XU1.VREF     4.999E-05
+
+    TOTAL POWER DISSIPATION  -6.25E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/02/23 21:04:18 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ****************************
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

@@ -1,0 +1,191 @@
+
+**** 10/28/23 20:46:23 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica6\practica6-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\user\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1s 0 1ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PRACTICA6
+V_V1         N18412 N20497  AC 0
++SIN 0 28.2843 60 0 0 0
+D_D1         N18412 N18427 D1N4007 
+D_D2         N20497 N18427 D1N4007 
+C_C1         0 N18427  352.76uf  TC=0,0 
+C_C2         0 N18427  0.1uf  TC=0,0 
+R_R3         0 N18896  1.3k TC=0,0 
+R_R4         N18896 N18969  9.1k TC=0,0 
+R_R5         N18529 N18427  1.5k TC=0,0 
+C_C3         0 N18969  1uf  TC=0,0 
+X_U1         N18427 N18896 N18969 LM317
+D_D3         N18529 0 D1N4148 
+R_R6         0 N18969  100 TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 10/28/23 20:46:23 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica6\practica6-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4007         D1N4148         D1N4001         X_U1.DMOD       
+          IS   14.110000E-09    2.682000E-09   14.110000E-09   30.000000E-15 
+           N    1.984           1.836           1.984           1.701        
+         ISR                    1.565000E-09                                 
+         IKF   94.81             .04417        94.81                         
+          BV    1.500000E+03  100              75                            
+         IBV   10.000000E-06  100.000000E-06   10.000000E-06                 
+          RS     .03389          .5664           .03389                      
+          TT    5.700000E-06   11.540000E-09    5.700000E-06                 
+         CJO   25.890000E-12    4.000000E-12   25.890000E-12                 
+          VJ     .3245           .5              .3245                       
+           M     .44             .3333           .44                         
+
+
+**** 10/28/23 20:46:23 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica6\practica6-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.QPASSMOD   
+               NPN             
+       LEVEL    1            
+          IS   30.000000E-15 
+          BF   50            
+          NF    1.701        
+         VAF    1.5          
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 10/28/23 20:46:23 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica6\practica6-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.JADJMOD    
+               NJF             
+         VTO   -1            
+        BETA   50.000000E-06 
+
+
+**** 10/28/23 20:46:23 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica6\practica6-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N18412)-14.06E-06 (N18427)-14.06E-06 (N18529)-14.06E-06 (N18896)-14.08E-06     
+
+(N18969) 1.083E-06 (N20497)-14.06E-06 (X_U1.4)    1.2500 (X_U1.5)    1.2985     
+
+(X_U1.6)   10.3560 (X_U1.7)   10.4270 (X_U1.8)    1.5027 (X_U1.9)  125.0000     
+
+(X_U1.10)    1.3792                   (X_U1.11)   10.0860                       
+
+(X_U1.12)   13.5610                   (X_U1.13)     .5632                       
+
+(X_U1.15)    1.2985                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.421E-20
+    X_U1.VREF   -1.250E-08
+
+    TOTAL POWER DISSIPATION   1.56E-08  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 10/28/23 20:46:23 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica6\practica6-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .16
+

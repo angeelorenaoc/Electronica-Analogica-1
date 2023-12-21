@@ -1,0 +1,4 @@
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\diode.lib, offset=18135, size=70
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\diode.lib, offset=19469, size=328
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\opamp.lib, offset=62713, size=1061
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\diode.lib, offset=13853, size=211
