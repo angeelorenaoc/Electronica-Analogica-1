@@ -1,0 +1,7 @@
+* source ANALISIS DC
+V_12v         N18211 0 12
+R_R1         B N18211  10k TC=0,0 
+R_Rc         C N18211  3.3k TC=0,0 
+Q_Q2         C B E Q2N2222A
+R_R2         0 B  680 TC=0,0 
+R_Re         0 E  51 TC=0,0 

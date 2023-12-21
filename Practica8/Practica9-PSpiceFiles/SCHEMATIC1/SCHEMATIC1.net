@@ -1,0 +1,5 @@
+* source PRACTICA9
+V_V1         N14394 0 10Vdc
+R_R1         N14461 N14394  1k TC=0,0 
+V_V2         N14465 0 2.288
+X_U1         N14461 N14465 0 2N7000

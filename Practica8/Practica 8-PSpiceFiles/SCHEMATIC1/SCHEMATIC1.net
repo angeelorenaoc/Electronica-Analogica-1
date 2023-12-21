@@ -1,0 +1,13 @@
+* source PRACTICA 8
+R_Rs         VIN N14525  50 TC=0,0 
+R_R1         B N17323  7.589k TC=0,0 
+R_R2         0 B  510.06 TC=0,0 
+R_Rc         C N17323  3.3k TC=0,0 
+R_Re         0 E  47.49 TC=0,0 
+R_Rl         0 VOUT  47k TC=0,0 
+C_C1         N14525 B  10u  TC=0,0 
+C_C2         C VOUT  10u  TC=0,0 
+V_V1         VIN 0  AC 0.1
++SIN 0 0.1 5k 0 0 0
+V_12v         N17323 0 11.6
+Q_Q2         C B E Q2N2222A
