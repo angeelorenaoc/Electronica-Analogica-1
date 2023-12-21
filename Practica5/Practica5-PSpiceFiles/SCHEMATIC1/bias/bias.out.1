@@ -1,0 +1,65 @@
+
+**** 09/25/23 21:18:38 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\EA1\Practica5\practica5-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\user\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.1s 0 1ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PRACTICA5
+D_D4         N15270 N15131 D1N4001 
+D_D1         N15131 N15286 D1N4001 
+D_D3         N15270 N15213 D1N4001 
+D_D2         N15213 N15286 D1N4001 
+D_D5         N15270 N16418 D1N4736 
+C_C1         N15270 N15286  100u  TC=0,0 
+R_R1         N16418 N15286  1k TC=0,0 
+L_L2         N15213 N15131  5.1mH  
+R_R2         N15121 N15111  1 TC=0,0 
+L_L1         N15213 N15121  734.4mH  
+V_V1         N15111 N15213  AC 0
++SIN 0 169.2 60 0 0 0
+Kn_K1         L_L1 L_L2     1
+R_R3         N15270 N16418  10k TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N15270 is floating
+
+ERROR(ORPSIM-15142): Node N15131 is floating
+
+ERROR(ORPSIM-15142): Node N15286 is floating
+
+ERROR(ORPSIM-15142): Node N15213 is floating
+
+ERROR(ORPSIM-15142): Node N16418 is floating
+
+ERROR(ORPSIM-15142): Node N15121 is floating
+
+ERROR(ORPSIM-15142): Node N15111 is floating
+
