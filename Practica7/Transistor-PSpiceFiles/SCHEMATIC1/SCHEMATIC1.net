@@ -1,0 +1,8 @@
+* source TRANSISTOR
+V_Vth         N14468 0 4.92
+R_Rth         N14468 N14490  48.380k TC=0,0 
+R_Rc         N14749 N14884  680 TC=0,0 
+R_Re         0 N14532  820 TC=0,0 
+V_Vcc         N14884 0 12
+X_Q2         N14749 N14490 N14532 awb2n2222a PARAMS:                           
++                  

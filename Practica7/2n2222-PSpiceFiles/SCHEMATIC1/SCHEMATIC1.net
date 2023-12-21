@@ -1,0 +1,6 @@
+* source 2N2222
+R_RB         N15660 N16154  50k TC=0,0 
+V_Vcc         N16036 0 1
+V_VBB         N15660 0 0Vdc
+X_Q4         N16036 N16154 0 awb2n2222a PARAMS:                                
++             
